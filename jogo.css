@@ -3,16 +3,26 @@
     padding: 0;
 }
 
-#borda{
-    background-color: blue;
+#borda {
+    background-color: rgb(132, 132, 133);
     height: 700px;
     width: 350px;
-    border: 5px solid black
+    border: 5px solid black;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    gap: 1px;
 }
 
-#cubo{
-    height: 35px;
-    width: 35px;
-    background-color: red;
-    border: 5px solid black
+.celula {
+    background-color: rgb(82, 82, 82);
+    border: 1px solid black;
+}
+
+button{
+    background-color: green;
+    height: 50px;
+    width: 150px;
+    border: 2px solid rgb(0, 61, 16);
+    border-radius: 10px;
 }
