@@ -1,0 +1,76 @@
+{
+  "utilizadores": [
+    {
+      "nome": "teste",
+      "email": "teste@teste.com",
+      "passe": "qwerty",
+      "top1": 100,
+      "top2": 200,
+      "top3": null,
+      "top4": null,
+      "top5": null
+    },
+    {
+      "nome": "teste2",
+      "email": "teste2@teste.com",
+      "passe": "qwerty",
+      "top1": 100,
+      "top2": 200,
+      "top3": null,
+      "top4": null,
+      "top5": null
+    }
+  ],
+  "top10": [
+    {
+      "posicao": 1,
+      "nome": "Ana",
+      "score": 12500
+    },
+    {
+      "posicao": 2,
+      "nome": "Pedro",
+      "score": 11200
+    },
+    {
+      "posicao": 3,
+      "nome": "Lucas",
+      "score": 10500
+    },
+    {
+      "posicao": 4,
+      "nome": "Rafaela",
+      "score": 9800
+    },
+    {
+      "posicao": 5,
+      "nome": "Tiago",
+      "score": 9400
+    },
+    {
+      "posicao": 6,
+      "nome": "Larissa",
+      "score": 9000
+    },
+    {
+      "posicao": 7,
+      "nome": "Gabriel",
+      "score": 8800
+    },
+    {
+      "posicao": 8,
+      "nome": "Juliana",
+      "score": 8600
+    },
+    {
+      "posicao": 9,
+      "nome": "Fernando",
+      "score": 8200
+    },
+    {
+      "posicao": 10,
+      "nome": "Paula",
+      "score": 8000
+    }
+  ]
+}

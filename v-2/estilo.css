@@ -1,28 +1,139 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+/* Corpo da página */
 body {
-    background: #000;
+    background-color: #111;
     color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 20px;
-}
-
-#game {
-    display: inline-block;
-    background: #222;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-canvas {
-    background: #111;
-    display: block;
-    margin: 0 auto;
-    image-rendering: pixelated;
-}
-
-#score-div {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    font-size: 20px;
+    align-items: flex-start;
+    gap: 20vw;
+    padding: 20px;
+}
+
+/* Container do jogo */
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#game h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Canvas do jogo */
+#tetris {
+    background-color: #000;
+}
+
+/* Pontuação */
+#score-div {
+    margin-top: 20px;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Painéis laterais */
+#ti, #top10 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+#top5 h3, #top10 h3 {
+    background-color: #333;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Painel de instruções */
+#instroções {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#instroções img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/*pagina de login e signin*/
+#logsign {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 308px;
+  text-align: left;
+}
+
+#logsign h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+#logsign h5 {
+  margin: 10px 0 5px;
+  font-weight: normal;
+}
+
+#logsign input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+#logsign button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s ease;
+}
+
+#logsign button:hover {
+  background-color: #45a049;
+}
+
+#logsign a {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+}
+
+#logsign a:hover {
+  text-decoration: underline;
 }
