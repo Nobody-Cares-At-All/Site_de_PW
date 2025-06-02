@@ -2,20 +2,9 @@
   "utilizadores": [
     {
       "nome": "teste",
-      "email": "teste@teste.com",
       "passe": "qwerty",
-      "top1": 100,
-      "top2": 200,
-      "top3": null,
-      "top4": null,
-      "top5": null
-    },
-    {
-      "nome": "teste2",
-      "email": "teste2@teste.com",
-      "passe": "qwerty",
-      "top1": 100,
-      "top2": 200,
+      "top1": null,
+      "top2": null,
       "top3": null,
       "top4": null,
       "top5": null
@@ -24,53 +13,53 @@
   "top10": [
     {
       "posicao": 1,
-      "nome": "Ana",
-      "score": 12500
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 2,
-      "nome": "Pedro",
-      "score": 11200
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 3,
-      "nome": "Lucas",
-      "score": 10500
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 4,
-      "nome": "Rafaela",
-      "score": 9800
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 5,
-      "nome": "Tiago",
-      "score": 9400
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 6,
-      "nome": "Larissa",
-      "score": 9000
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 7,
-      "nome": "Gabriel",
-      "score": 8800
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 8,
-      "nome": "Juliana",
-      "score": 8600
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 9,
-      "nome": "Fernando",
-      "score": 8200
+      "nome": null,
+      "score": null
     },
     {
       "posicao": 10,
-      "nome": "Paula",
-      "score": 8000
+      "nome": null,
+      "score": null
     }
   ]
 }
