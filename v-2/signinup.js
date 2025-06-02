@@ -32,7 +32,6 @@ botao.onclick = function(){
 function signIn(){
     let nome = campoN.value
     let passe = campoP.value
-    console.log(base.utilizadores.find(item => item.passe == passe && item.nome == nome).array())
 
     user = base.utilizadores.find(item => item.passe == passe && item.nome == nome);
     if(user == undefined){
