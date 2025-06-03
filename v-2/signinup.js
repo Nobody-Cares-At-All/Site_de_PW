@@ -37,7 +37,17 @@ function signIn(){
     if(user == undefined){
         alert("Email e/ou palavra passe está errado/s. Tente novamente")
     }else{
-        localStorage.setItem("userInfo", JSON.stringify(user));
+        let userInfo = {
+            nome: user.nome,
+            passe: user.passe,
+            top1: user.top1,
+            top2: user.top2,
+            top3: user.top3,
+            top4: user.top4,
+            top5: user.top5,
+            n: base.utilizadores.findIndex(item => item.nome === nome)
+        }
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
         window.location.href = "Tetris.html";
     }
 
@@ -94,74 +104,4 @@ function signUp() {
             console.error("Erro ao enviar:", err);
             alert("Erro ao comunicar com o servidor.");
         });
-}
-
-let refreshInfo = {
-    "utilizadores": [
-      {
-        "nome": "teste",
-        "passe": "qwerty",
-        "top1": null,
-        "top2": null,
-        "top3": null,
-        "top4": null,
-        "top5": null
-      },
-    ],
-    "top10": [
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      },
-      {
-        "nome": null,
-        "score": null
-      }
-    ]
-  }
-
-function refresh() {
-    fetch("https://api.jsonbin.io/v3/b/683b8d258960c979a5a3a214", {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            "X-Master-Key": "$2a$10$VVeeX2nC7Y9bgUxZVdyob.D1lxkFN0D4i4.AkZqzju2kYlFwKvuPu"
-        },
-        body: JSON.stringify(refreshInfo)
-    })
-    .catch(err => {
-            console.error("Erro ao enviar:", err);
-    });
 }
