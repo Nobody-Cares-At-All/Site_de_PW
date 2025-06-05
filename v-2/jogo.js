@@ -63,10 +63,9 @@ function arenaSweep() {
 		arena.unshift(row);
 		++y;
         score += 10;
-		if (score % 100 === 0) {
-			dropInterval *= 0.95;
+		if (score % 100 === 0 || dropInterval >= 0) {
+			dropInterval -= 50;
 		}
-        console.log(score)
         n.textContent = score;
 	}
 }
@@ -77,9 +76,9 @@ function collide(arena, player) {
 	for (let y = 0; y < m.length; ++y) {
 		for (let x = 0; x < m[y].length; ++x) {
 			if (m[y][x] !== 0 &&
-				 (arena[y + o.y] &&
-					arena[y + o.y][x + o.x]) !== 0) {
-				return true;
+				(arena[y + o.y] &&
+				arena[y + o.y][x + o.x]) !== 0){
+					return true;
 			}
 		}
 	}
@@ -133,13 +132,12 @@ function playerMove(dir) {
 	}
 }
 
-function playerReset() {
+function playerReset(w) {
 	const piecesType = pieces[pieces.length * Math.random() | 0];
 	player.matrix = createPiece(piecesType);
 	player.pos.y = 0;
-	player.pos.x = (arena[0].length / 2 | 0) -
-								 (player.matrix[0].length / 2 | 0);
-	if (collide(arena, player)) {
+	player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
+	if (collide(arena, player) || w === 82) {
 		arena.forEach(row => row.fill(0));
 		dropInterval = 1000;
 		scoreUpdate(score)
@@ -204,17 +202,36 @@ function draw() {
 	drawMatrix(player.matrix, player.pos);
 }
 
+function fastDrop() {
+    while (true) {
+        player.pos.y++;
+        if (collide(arena, player)) {
+            player.pos.y--;
+            merge(arena, player);
+            playerReset();
+            arenaSweep();
+            dropCounter = 0;
+            break;
+        }
+    }
+}
+
 document.addEventListener('keydown', event => {
-	if (event.keyCode === 37) {
+	if (event.keyCode === 65) {
 		playerMove(-1);
-	} else if (event.keyCode === 39) {
+	} else if (event.keyCode === 68) {
 		playerMove(1);
-	} else if (event.keyCode === 40) {
+	} else if (event.keyCode === 83) {
 		playerDrop();
 	} else if (event.keyCode === 81) {
 		playerRotate(-1);
 	} else if (event.keyCode === 69) {
 		playerRotate(1);
+	} else if (event.keyCode === 82) {
+		playerReset(event.keyCode);
+		
+	} else if (event.keyCode === 87) {
+		fastDrop();
 	}
 });
 

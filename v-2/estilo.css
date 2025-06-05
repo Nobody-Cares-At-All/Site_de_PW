@@ -40,7 +40,7 @@ body {
 /* Pontuação */
 #score-div {
     margin-top: 20px;
-    background-color: #333;
+    background-color: #222;
     padding: 10px 20px;
     border-radius: 8px;
     display: flex;
@@ -49,18 +49,18 @@ body {
 }
 
 /* Painéis laterais */
-#ti, #top10 {
+#ti{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #1a1a1a;
+    background-color: #222;
     padding: 15px;
     border-radius: 10px;
     height: fit-content;
 }
 
 #top5 h3, #top10 h3 {
-    background-color: #333;
+    background-color: #222;
     padding: 8px;
     border-radius: 5px;
     text-align: center;
@@ -82,11 +82,11 @@ body {
 
 /*pagina de login e signin*/
 #logsign {
-  background-color: #1e1e1e;
+  background-color: #222;
   padding: 30px 40px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  width: 308px;
+  max-width: 333px;
   text-align: left;
 }
 

@@ -1,7 +1,15 @@
 let top10L
 let top5
 let top10
-let btn = document.querySelector("button");
+let btn = document.getElementById("signOut");
+
+btn.onclick = function () {
+    localStorage.removeItem("userInfo");
+    top10L = null;
+    top5 = null;
+    top10 = null;
+    window.location.href = "signin.html";
+}
 
 function userInfoGet() {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -62,14 +70,16 @@ async function top10F(){
 }
 
 function scoreUpdate(score) {
-    let userInfo = userInfoGet()
-    if (score > userInfo[top5] || userInfo[top5] == null) {
-        top5Update(score);
+    if (score !== 0) {
+        let userInfo = userInfoGet()
+        if (score > userInfo[top5] || userInfo[top5] == null) {
+            top5Update(score);
+        }
+        if (score > top10L[9].score || top10L[9].score == null) {
+            top10Update(score);
+        }
+        updateAPI();
     }
-    if (score > top10L[9].score || top10L[9].score == null) {
-        top10Update(score);
-    }
-    updateAPI();
 }
 
 function top5Update(score) {
@@ -89,7 +99,6 @@ function top5Update(score) {
 
 function top10Update(score) {
     let userInfo = userInfoGet()
-    top10F()
     for (let i = 0; i < 10; i++) {
         if ((top10L[i].score == null || score > top10L[i].score) && (i == 0 || score < top10L[i - 1].score)) {
             for (let j = 9; j > i; j--) {
@@ -137,10 +146,4 @@ async function updateAPI() {
             top10: top10L
         })
     });
-
-    if (putResponse.ok) {
-        console.log("Top5 do usuário atualizado com sucesso na API.");
-    } else {
-        console.error("Erro ao atualizar o top5 do usuário na API:", putResponse.statusText);
-    }
 }

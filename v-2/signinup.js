@@ -72,6 +72,10 @@ function signUp() {
         return alert("O nome já está a ser usado.");
     }
 
+    if (passe.length < 6) {
+        return alert("A palavra passe tem de ter pelo menos 6 caracteres.");
+    }
+
     if (passe !== cPasse) {
         return alert("A palavra passe e a confirmação não coincidem.");
     }
@@ -104,4 +108,10 @@ function signUp() {
             console.error("Erro ao enviar:", err);
             alert("Erro ao comunicar com o servidor.");
         });
+}
+
+function inputTeste() {
+    document.addEventListener('keydown', event => {
+        console.log(`Key pressed: ${event.key}, KeyCode: ${event.keyCode}`);
+    });
 }
